@@ -16,15 +16,16 @@ public class ListRegistrationsView extends VerticalLayout {
     private final transient RegistrationRepository repo;
     private final Grid<Registration> registrations = new Grid<>(Registration.class);
 
+
     public ListRegistrationsView(RegistrationRepository repo) {
         this.repo = repo;
         // Build the layout
         H1 heading = new H1("List of submitted registrations");
         Button update = new Button(VaadinIcon.REFRESH.create());
-        RouterLink orderView = new RouterLink("Submit new registration", MainView.class);
+        RouterLink orderView = new RouterLink("Submit new registration", RegisterView.class);
         add(heading, update, registrations, orderView);
 
-        registrations.setColumns("name", "email", "shirtSize");
+        registrations.setColumns("name", "email");
         registrations.addComponentColumn(order -> {
             Button deleteBtn = new Button(VaadinIcon.TRASH.create());
             deleteBtn.addClickListener(e -> {

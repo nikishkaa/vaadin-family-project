@@ -23,16 +23,15 @@ public class Registration {
 
     @NotEmpty
     @Email
-    private String email  = "";
+    private String email = "";
     @NotEmpty
     private String name = "";
-    @NotEmpty
-    private String shirtSize;
 
-    public Registration(String name, String email, String shirtSize) {
+    @NotEmpty
+
+    public Registration(String name, String email) {
         this.name = name;
         this.email = email;
-        this.shirtSize = shirtSize;
     }
 
 }
